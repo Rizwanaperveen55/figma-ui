@@ -79,14 +79,14 @@ export default function Navbar() {
             <SheetContent className="p-4">
               {/* Mobile Icons */}
               <div className="mt-6 flex items-center justify-around">
-                <Link href="/login" className="text-gray-800 hover:text-black">
+                <Link href="/myaccount" className="text-gray-800 hover:text-black">
                   <BsPersonExclamation size={24} />
                 </Link>
-                <Link href="/search" className="text-gray-800 hover:text-black">
+                <Link href="/" className="text-gray-800 hover:text-black">
                   <FiSearch size={24} />
                 </Link>
                 <Link
-                  href="/wishlist"
+                  href="/shop"
                   className="text-gray-800 hover:text-black"
                 >
                   <IoMdHeartEmpty size={24} />
@@ -111,7 +111,7 @@ export default function Navbar() {
                   Shop
                 </Link>
                 <Link
-                  href="/about"
+                  href="/shop"
                   className="text-lg font-medium text-gray-900 block"
                 >
                   About
