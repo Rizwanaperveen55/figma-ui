@@ -121,4 +121,3 @@ function checkFields<T>(fields: T): T {
   return fields;
 }
 
-export {secData};
