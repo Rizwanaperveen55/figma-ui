@@ -7,7 +7,7 @@ import Service from "@/components/Service";
 import Card from "@/components/Card";
 import Link from "next/link";
 
-export interface SecData {
+ interface SecData {
   id: string;
   image: string;
   title: string;
