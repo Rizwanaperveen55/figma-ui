@@ -1,4 +1,4 @@
-"use client";
+
 
 import { BsPersonExclamation } from "react-icons/bs";
 import { FiSearch } from "react-icons/fi";
@@ -10,15 +10,13 @@ import Image from "next/image";
 import {
   Sheet,
   SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { useState } from "react";
+import CartDropDown from "@/components/CartDropDown"
+
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+
 
   return (
     <header className=" shadow-sm w-full mx-auto px-4 sm:px-6 text-xl fixed bg-transparent  md:px-16 lg:px-32">
@@ -36,7 +34,7 @@ export default function Navbar() {
             <Link href="/shop" className="text-gray-800 hover:text-black">
               Shop
             </Link>
-            <Link href="/about" className="text-gray-800 hover:text-black">
+            <Link href="/myaccount" className="text-gray-800 hover:text-black">
               About
             </Link>
             <Link href="/contact" className="text-gray-800 hover:text-black">
@@ -47,18 +45,26 @@ export default function Navbar() {
 
         {/* Right: Icons */}
         <div className="hidden md:flex items-center space-x-4">
-          <Link href="/login" className="text-gray-800 hover:text-black">
+          <Link href="/myaccount" className="text-gray-800 hover:text-black">
             <BsPersonExclamation size={20} />
           </Link>
-          <Link href="/search" className="text-gray-800 hover:text-black">
+          <Link href="/" className="text-gray-800 hover:text-black">
             <FiSearch size={20} />
           </Link>
-          <Link href="/wishlist" className="text-gray-800 hover:text-black">
+          <Link href="/shop" className="text-gray-800 hover:text-black">
             <IoMdHeartEmpty size={20} />
           </Link>
-          <Link href="/cart" className="text-gray-800 hover:text-black">
-            <IoCartOutline size={20} />
-          </Link>
+            <Sheet>
+            <SheetTrigger>
+            <IoCartOutline size={20} className="text-gray-800 hover:text-black"/>
+            </SheetTrigger>
+
+            {/* Sheet Content */}
+            <SheetContent className="p-4">
+                <CartDropDown/>
+            </SheetContent>
+          </Sheet>
+          
         </div>
 
         {/* Mobile Navigation */}
