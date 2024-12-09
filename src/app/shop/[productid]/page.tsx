@@ -6,20 +6,17 @@ import { CiInstagram } from "react-icons/ci";
 import { CiLinkedin } from "react-icons/ci";
 import { CiFacebook } from "react-icons/ci";
 import ShortSec from "@/components/ShortSec"
-import {SecData ,secData} from "@/app/shop/page"
+import {secData} from "@/app/shop/page"
 
-async function getcarddata(id: string): Promise<SecData | undefined> {
-  const data = secData.find(data => data.id=== id);
-  return data;
-}
 
 interface Params {
   productid:string
 }
+
+const data4 = "1"
 export default async function ProductDetail({params}:{params:Params}) {
-  const data2 = secData.find((data: SecData) => data.id === params.productid);
-  const pageData = await getcarddata(params.productid)
-  const image = await pageData?.image
+  const data2 = secData.find((data) => data4 === params.productid);
+  
   // const image = "hersofa.png"
   return (
     <div>
@@ -36,7 +33,7 @@ export default async function ProductDetail({params}:{params:Params}) {
                 className="relative w-20 h-20 border cursor-pointer"
               >
                 <Image
-                  src={`${image || "/hersofa.png"}`}
+                  src={`${ "/hersofa.png"}`}
                   alt={`Asgaard sofa view ${index}`}
                   fill
                   className="object-cover"
@@ -48,7 +45,7 @@ export default async function ProductDetail({params}:{params:Params}) {
           {/* Main Image */}
           <div className="relative flex-1 aspect-square">
             <Image
-              src={`${image || "/hersofa.png"}`}
+              src={`${ "/hersofa.png"}`}
               alt="Asgaard sofa main view"
               fill
               className="object-cover"
@@ -59,8 +56,8 @@ export default async function ProductDetail({params}:{params:Params}) {
         {/* Product Details */}
         <div className="space-y-6">
           <div className="space-y-2">
-            <h1 className="text-3xl font-medium">{pageData?.title}</h1>
-            <p className="text-xl">Rs. {pageData?.price}.00</p>
+            <h1 className="text-3xl font-medium">Sofa </h1>
+            <p className="text-xl">Rs. 2500.00</p>
           </div>
 
           {/* Rating */}
