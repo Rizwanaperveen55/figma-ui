@@ -14,7 +14,7 @@ import Link from "next/link";
   price: number;
 }
 
-export const secData: SecData[] = [
+const secData: SecData[] = [
   {
     id: "1",
     image: "/shortsec/modulasofa.png",
@@ -120,3 +120,5 @@ function checkFields<T>(fields: T): T {
   // Assuming checkFields is meant to validate or process the data in some way
   return fields;
 }
+
+export {secData};
