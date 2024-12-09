@@ -55,7 +55,7 @@ export default function Cart() {
             </div>
 
             {/* Cart Totals */}
-            <div className="bg-white shadow-md rounded-lg p-6">
+            <div className="bg-morelightyellow shadow-md rounded-lg p-6 ">
               <h2 className="text-lg font-semibold text-gray-700 border-b pb-4 mb-4">
                 Cart Totals
               </h2>
@@ -63,13 +63,15 @@ export default function Cart() {
                 <span>Subtotal</span>
                 <span>Rs. 250,000.00</span>
               </div>
-              <div className="flex justify-between text-gray-700 font-bold text-lg">
+              <div className="flex justify-between text-darkyellow font-bold text-lg">
                 <span>Total</span>
                 <span>Rs. 250,000.00</span>
               </div>
-              <button className="mt-6 w-full bg-yellow-500 hover:bg-yellow-600 text-white py-3 px-4 rounded shadow">
+              <Link href={"/checkout"}>
+              <button className="mt-6 w-full bg-lightyellow hover:bg-darkyellow text-black py-3 px-4 rounded shadow">
                 Check Out
               </button>
+              </Link>
             </div>
           </div>
         </div>
