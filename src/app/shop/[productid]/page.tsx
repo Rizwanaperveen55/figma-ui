@@ -22,9 +22,9 @@ export default async function ProductDetail({params}:{params:{productid:string}}
         <div className="container mx-auto px-4 py-8">
       <div className="grid md:grid-cols-2 gap-8">
         {/* Product Images */}
-        <div className="flex gap-4">
+        <div className="flex flex-col-reverse sm:flex-row gap-4">
           {/* Thumbnails */}
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-row sm:flex-col gap-4">
             {[1, 2, 3, 4].map((index) => (
               <div
                 key={index}
@@ -41,7 +41,7 @@ export default async function ProductDetail({params}:{params:{productid:string}}
           </div>
           
           {/* Main Image */}
-          <div className="relative flex-1 aspect-square">
+          <div className="relative flex-1 md:h-80  aspect-square">
             <Image
               src={`${data?.image}`}
               alt="Asgaard sofa main view"
