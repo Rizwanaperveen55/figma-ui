@@ -6,14 +6,14 @@ import { CiInstagram } from "react-icons/ci";
 import { CiLinkedin } from "react-icons/ci";
 import { CiFacebook } from "react-icons/ci";
 import ShortSec from "@/components/ShortSec"
+import { secData } from "@/app/shop/page";
 
 
 
 
 
-
-export default async function ProductDetail() {
- 
+export default async function ProductDetail({params}:{params:{productid:string}}) {
+ const data = secData.find((item) => item.id === params.productid)
   
   // const image = "hersofa.png"
   return (
@@ -31,7 +31,7 @@ export default async function ProductDetail() {
                 className="relative w-20 h-20 border cursor-pointer"
               >
                 <Image
-                  src={`${ "/hersofa.png"}`}
+                  src={`${data?.image}`}
                   alt={`Asgaard sofa view ${index}`}
                   fill
                   className="object-cover"
@@ -43,9 +43,11 @@ export default async function ProductDetail() {
           {/* Main Image */}
           <div className="relative flex-1 aspect-square">
             <Image
-              src={`${ "/hersofa.png"}`}
+              src={`${data?.image}`}
               alt="Asgaard sofa main view"
-              fill
+              height={500}
+              width={500}
+              
               className="object-cover"
             />
           </div>
@@ -54,8 +56,8 @@ export default async function ProductDetail() {
         {/* Product Details */}
         <div className="space-y-6">
           <div className="space-y-2">
-            <h1 className="text-3xl font-medium">Sofa </h1>
-            <p className="text-xl">Rs. 2500.00</p>
+            <h1 className="text-3xl font-medium">{data?.title}</h1>
+            <p className="text-xl">Rs. {data?.price}.00</p>
           </div>
 
           {/* Rating */}

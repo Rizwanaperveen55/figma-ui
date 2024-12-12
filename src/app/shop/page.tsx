@@ -90,16 +90,14 @@ const secData: SecData[] = [
 ];
 
 export default function Shop() {
-  // Check secData to ensure it matches the type expected
-  // Assuming checkFields is something you want to use but you need a simpler approach
-  const validSecData = checkFields<SecData[]>(secData); // Ensure secData is properly typed
+
 
   return (
     <div>
       <BreadCrumb title="Shop" url="shop" />
       <div className="flex justify-center items-center mx-auto px-4 sm:px-6 md:px-16 lg:px-32">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {validSecData.map((cardData: SecData) => (
+          {secData.map((cardData: SecData) => (
             <Link
               href={`/shop/${cardData.id}`}
               key={cardData.id}
@@ -115,9 +113,4 @@ export default function Shop() {
   );
 }
 
-// You might need to adjust the checkFields function to work for SecData[] if it's not already
-function checkFields<T>(fields: T): T {
-  // Assuming checkFields is meant to validate or process the data in some way
-  return fields;
-}
-
+export {secData}
