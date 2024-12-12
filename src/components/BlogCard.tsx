@@ -6,8 +6,8 @@ import { SlCalender } from "react-icons/sl";
 
 export default function BlogCard (carddata:{image:string}){
     return (
-        <div className="w-[383px] h-[555px] flex flex-col justify-center items-center space-y-5">
-            <div className="w-[350px] h-[350px]">
+        <div className="w-[280px] h-[555px] flex flex-col justify-center items-center space-y-5">
+            <div className="w-[270px] h-[270px]">
             <Image src={carddata.image} alt="rectangle" height={400} width={400} className="rounded-lg"></Image>
             </div>
             <p>Going All In With Milenial Design</p>
