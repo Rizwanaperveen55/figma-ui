@@ -20,13 +20,13 @@ export default function Navbar() {
 
   return (
     <header className=" shadow-sm w-full mx-auto px-4 sm:px-6 text-xl fixed bg-transparent  md:px-16 lg:px-32">
-      <div className="container  flex items-center justify-between h-16">
+      <div className=" flex items-center justify-between h-16">
         {/* Left: Logo and Navigation Links */}
         {/* Logo */}
         <Link href="/" className="text-lg font-bold text-gray-900">
           <Image src={"/logo.png"} alt="Logo" width={50} height={50}></Image>
         </Link>
-        <div className="flex items-center gap-12">
+        <div className="hidden md:flex items-center gap-12">
           <nav className="hidden md:flex gap-x-12 justify-center">
             <Link href="/" className="text-gray-800 hover:text-black">
               Home

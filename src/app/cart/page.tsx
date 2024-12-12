@@ -55,8 +55,8 @@ export default function Cart() {
             </div>
             {/* Product card for mobile */}
             <div className="sm:hidden bg-morelightyellow shadow-md  rounded-lg">
-              <div className="flex flex-col xs:flex-row justify-center items-center ">
-                <div className="px-5 py-5">
+              <div className="flex p-5  space-y-4 flex-col xs:flex-row justify-center items-center ">
+                <div className="">
                   <Image
                     src="/Asgaardsofa4.png"
                     alt="Asgaard sofa"
