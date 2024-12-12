@@ -25,7 +25,11 @@ const config: Config = {
 			darkgrey: "#9F9F9F",
 			lightreddish: "#FAF4F4"
 
-		}
+		},
+
+		screens: {
+			xs: "300px",
+		},
   	}
   },
   plugins: [require("tailwindcss-animate")],
