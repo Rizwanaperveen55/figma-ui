@@ -34,8 +34,8 @@ export default function Navbar() {
             <Link href="/shop" className="text-gray-800 hover:text-black">
               Shop
             </Link>
-            <Link href="/myaccount" className="text-gray-800 hover:text-black">
-              About
+            <Link href="/blog" className="text-gray-800 hover:text-black">
+              Blog
             </Link>
             <Link href="/contact" className="text-gray-800 hover:text-black">
               Contact
@@ -111,10 +111,10 @@ export default function Navbar() {
                   Shop
                 </Link>
                 <Link
-                  href="/shop"
+                  href="/blog"
                   className="text-lg font-medium text-gray-900 block"
                 >
-                  About
+                  Blog
                 </Link>
                 <Link
                   href="/contact"
