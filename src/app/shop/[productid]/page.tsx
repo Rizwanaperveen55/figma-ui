@@ -6,14 +6,14 @@ import { CiInstagram } from "react-icons/ci";
 import { CiLinkedin } from "react-icons/ci";
 import { CiFacebook } from "react-icons/ci";
 import ShortSec from "@/components/ShortSec"
-import { secData } from "@/app/shop/page";
+import  {secData, type SecData}  from "@/utils/dynamicpage";
 
 
 
 
 
 export default async function ProductDetail({params}:{params:{productid:string}}) {
- const data = secData.find((item) => item.id === params.productid)
+ const data = secData.find((item:SecData) => item.id === params.productid)
   
   // const image = "hersofa.png"
   return (
