@@ -19,74 +19,72 @@ export default async function ProductDetail({
   return (
     <div>
       <BreadCrumb title="Product Page" url="/" />
-      <div className="container  flex justify-center items-center px-8 w-full py-8">
-        <div className="grid grid-cols-1  gap-2 sm:gap-8">
+      <div className="container mx-auto px-4 py-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 items-start">
           {/* Product Images */}
-          <div className="flex flex-col-reverse sm:flex-row gap-4">
+          <div className="space-y-4">
+            {/* Main Image */}
+            <div className="relative aspect-square w-full max-w-md mx-auto sm:max-w-none">
+              <Image
+                src={`${data?.image}`}
+                alt="Asgaard sofa main view"
+                layout="responsive"
+                height={400}
+                width={400}
+                className="object-cover rounded-lg"
+              />
+            </div>
             {/* Thumbnails */}
-            <div className="flex flex-row sm:flex-col gap-4">
+            <div className="flex gap-2 sm:justify-center overflow-x-auto">
               {[1, 2, 3, 4].map((index) => (
                 <div
                   key={index}
-                  className="relative sm:w-20 sm:h-20 w-12 h-12 border cursor-pointer"
+                  className="relative w-16 h-16 border rounded-lg cursor-pointer overflow-hidden"
                 >
                   <Image
                     src={`${data?.image}`}
                     alt={`Asgaard sofa view ${index}`}
-                    fill
+                    layout="fill"
                     className="object-cover"
                   />
                 </div>
               ))}
             </div>
-
-            {/* Main Image */}
-            <div className="relative flex-1 md:h-80  aspect-square">
-              <Image
-                src={`${data?.image}`}
-                alt="Asgaard sofa main view"
-                height={400}
-                width={400}
-                className="object-cover"
-              />
-            </div>
           </div>
 
           {/* Product Details */}
           <div className="space-y-6">
-            <div className="space-y-2">
-              <h1 className="text-3xl font-medium">{data?.title}</h1>
-              <p className="text-xl">Rs. {data?.price}.00</p>
+            {/* Title and Price */}
+            <div>
+              <h1 className="text-2xl sm:text-3xl font-semibold">{data?.title}</h1>
+              <p className="text-xl text-gray-700">Rs. {data?.price}.00</p>
             </div>
 
             {/* Rating */}
             <div className="flex items-center gap-2">
-              <div className="flex">
+              <div className="flex text-yellow-500">
                 {[1, 2, 3, 4, 5].map((star) => (
-                  <span key={star} className="text-lg">
-                    {/* Star icon placeholder */}★
-                  </span>
+                  <span key={star} className="text-lg">★</span>
                 ))}
               </div>
-              <span className="text-sm">(5 Customer Review)</span>
+              <span className="text-sm text-gray-500">(5 Customer Reviews)</span>
             </div>
 
             {/* Description */}
-            <p className="text-sm">
-              Setting the bar as one of the loudest speakers in its class, the
-              Kilburn is a compact, stout-hearted hero with a well-balanced
-              audio which boasts a clear midrange and extended highs for a
-              sound.
+            <p className="text-gray-600 leading-relaxed">
+              Setting the bar as one of the loudest speakers in its class, the Kilburn
+              is a compact, stout-hearted hero with a well-balanced audio that boasts
+              clear midrange and extended highs for a superior sound experience.
             </p>
 
             {/* Size Selection */}
-            <div className="space-y-2">
-              <span className="text-sm">Size</span>
-              <div className="flex gap-2">
+            <div>
+              <span className="block text-sm font-medium text-gray-700">Size</span>
+              <div className="flex gap-2 mt-2">
                 {["M", "L", "XL"].map((size) => (
                   <button
                     key={size}
-                    className="w-10 h-10 border text-sm flex items-center justify-center"
+                    className="w-10 h-10 border rounded-lg flex items-center justify-center text-sm hover:bg-gray-100"
                   >
                     {size}
                   </button>
@@ -95,55 +93,56 @@ export default async function ProductDetail({
             </div>
 
             {/* Color Selection */}
-            <div className="space-y-2">
-              <span className="text-sm">Color</span>
-              <div className="flex gap-2">
+            <div>
+              <span className="block text-sm font-medium text-gray-700">Color</span>
+              <div className="flex gap-2 mt-2">
                 <button className="w-6 h-6 rounded-full bg-purple-600" />
                 <button className="w-6 h-6 rounded-full bg-black" />
                 <button className="w-6 h-6 rounded-full bg-yellow-700" />
               </div>
             </div>
 
-            {/* Add to Cart */}
-            <div className="flex gap-4">
-              <div className="flex border">
+            {/* Quantity and Add to Cart */}
+            <div className="flex items-center gap-4">
+              <div className="flex items-center border rounded-lg">
                 <button className="px-4 py-2 border-r">-</button>
                 <input
                   type="number"
                   value="1"
-                  className="w-16 text-center"
                   readOnly
+                  className="w-12 text-center border-none focus:outline-none"
                 />
                 <button className="px-4 py-2 border-l">+</button>
               </div>
-              <button className="px-8 py-2 border">Add To Cart</button>
+              <button className="px-6 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700">
+                Add To Cart
+              </button>
             </div>
 
-            {/* Product Meta */}
-            <div className="space-y-2 pt-6 border-t text-sm">
-              <div className="flex gap-8">
-                <span className="text-gray-600">SKU</span>
-                <span>: SS001</span>
+            {/* Product Metadata */}
+            <div className="space-y-2 pt-4 border-t text-sm text-gray-600">
+              <div className="flex justify-between">
+                <span>SKU</span>
+                <span>SS001</span>
               </div>
-              <div className="flex gap-8">
-                <span className="text-gray-600">Category</span>
-                <span>: Sofas</span>
+              <div className="flex justify-between">
+                <span>Category</span>
+                <span>Sofas</span>
               </div>
-              <div className="flex gap-8">
-                <span className="text-gray-600">Tags</span>
-                <span>: Sofa, Chair, Home, Shop</span>
+              <div className="flex justify-between">
+                <span>Tags</span>
+                <span>Sofa, Chair, Home, Shop</span>
               </div>
-              <div className="flex gap-8">
-                <span className="text-gray-600">Share</span>
-                <div className="flex gap-4">
-                  {/* Social icons placeholders */}
-                  <Link href="#" className="text-lg">
+              <div className="flex justify-between">
+                <span>Share</span>
+                <div className="flex gap-2">
+                  <Link href="#" className="text-lg text-blue-600">
                     <CiFacebook />
                   </Link>
-                  <Link href="#" className="text-lg">
+                  <Link href="#" className="text-lg text-blue-500">
                     <CiLinkedin />
                   </Link>
-                  <Link href="#" className="text-lg">
+                  <Link href="#" className="text-lg text-pink-500">
                     <CiInstagram />
                   </Link>
                 </div>
@@ -152,6 +151,7 @@ export default async function ProductDetail({
           </div>
         </div>
       </div>
+
       <ShortSec title="More Products" />
       <Service />
     </div>
